@@ -13,13 +13,13 @@ class Solution {
                 str.push(new StringBuilder(Character.toString(ch)));
             }
             else if(ch == ']'){
-                String sNew = "";
-                StringBuilder sb = new StringBuilder();
-                while (!str.peek().toString().equals("[")){
-                    sNew = str.pop() + sNew;
+                StringBuilder sNew = new StringBuilder();
+                while (!str.peek().toString().equals("[")) {
+                    sNew.insert(0, str.pop());
                 }
                 str.pop();
                 int n = number.pop();
+                StringBuilder sb = new StringBuilder();
                 for(int i = 0; i<n; i++){
                     sb.append(sNew);
                 }
