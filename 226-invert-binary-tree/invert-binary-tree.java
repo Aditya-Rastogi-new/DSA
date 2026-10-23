@@ -16,16 +16,16 @@
 class Solution {
     public TreeNode invertTree(TreeNode root) {
         if(root == null) return root;
-        mirror(root);
+        dfs(root);
         return root;
     }
-    public void mirror(TreeNode root){
+    public void dfs(TreeNode root){
         if(root == null) return;
         TreeNode temp = root.left;
         root.left = root.right;
         root.right = temp;
 
-        mirror(root.left);
-        mirror(root.right);
+        dfs(root.left);
+        dfs(root.right);
     }
 }
