@@ -21,7 +21,7 @@ class Solution {
     }
     public void preorder(TreeNode root, int level, List<Integer> ans){
         if(root == null) return;
-        if(level >= ans.size()) ans.add(root.val);
+        if(level == ans.size()) ans.add(root.val);
         else ans.set(level,root.val);
         preorder(root.left,level + 1, ans);
         preorder(root.right, level + 1, ans);
